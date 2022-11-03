@@ -1,4 +1,3 @@
-from tabnanny import verbose
 from django.db import models
 
 class User(models.Model):
@@ -23,12 +22,14 @@ class User(models.Model):
     )
     tg_nickname = models.TextField(
         verbose_name='Логин в телеге',
-        unique=True,
     )
-    balance = models.FloatField(
-        verbose_name='Балланс',
-        null=True,
-        blank=True,
+    registration_date = models.DateTimeField(
+        verbose_name='Дата регистрации',
+        auto_now_add=True
+    )
+    last_activity = models.DateTimeField(
+        verbose_name='Последняя активность',
+        auto_now=True
     )
 
     def __str__(self):

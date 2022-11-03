@@ -11,5 +11,6 @@ class ProfileAdmin(admin.ModelAdmin):
                     'eresh_id',
                     'tg_user_id',
                     'tg_nickname',
-                    'balance',
+                    'registration_date',
+                    'last_activity',
                     )
