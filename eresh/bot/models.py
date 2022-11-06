@@ -5,20 +5,16 @@ class User(models.Model):
         verbose_name='Токен в ERESH',
         unique=True,
     )
-    eresh_token_expires = models.DateTimeField(
-        verbose_name='Время смерти токена'
-    )
     eresh_email = models.EmailField(
         verbose_name='Почта',
-        unique=True,
     )
     eresh_id = models.PositiveIntegerField(
         verbose_name='ID в ERESH',
-        unique=True,
+        null = True,
+        blank = True,
     )
     tg_user_id = models.PositiveIntegerField(
         verbose_name='ID в телеге',
-        unique=True,
     )
     tg_nickname = models.TextField(
         verbose_name='Логин в телеге',
